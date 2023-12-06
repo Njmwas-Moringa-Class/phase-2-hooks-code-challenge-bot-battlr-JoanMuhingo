@@ -1,12 +1,13 @@
 import React from "react";
-
-function BotCollection() {
-  // Your code here
+import BotCard from "./BotCard";
+function BotCollection({ bots, onEnlist }) {
   return (
     <div className="ui four column grid">
       <div className="row">
-        {/*...and here..*/}
-        Collection of all bots
+        {bots.map((bot) => (
+          <BotCard key={bot.id} bot={bot} onEnlist={() => onEnlist(bot)} />
+        ))}
+        {/* Collection of all bots */}
       </div>
     </div>
   );
