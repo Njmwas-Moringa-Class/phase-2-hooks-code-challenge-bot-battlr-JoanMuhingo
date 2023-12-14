@@ -1,6 +1,6 @@
 import React from "react";
-
-function YourBotArmy({enlistedBots =[],onRelease, onDischarge}) {
+import BotCard from "./BotCard";
+function YourBotArmy({enlistedBots = [], onRelease, onDischarge}) {
 
   const handleRelease =(bot) =>{
 
@@ -18,6 +18,7 @@ function YourBotArmy({enlistedBots =[],onRelease, onDischarge}) {
         <div className="row bot-army-row">
           {enlistedBots.map((bot) =>(
             <div key ={bot.id}>
+              <BotCard key={bot.id} bot={bot}/>
             <button onClick ={() => handleRelease(bot)}>Release from Army</button>
             <button onClick ={() => handleDischarge(bot)}>Discharge</button>
             </div>
